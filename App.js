@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
-
+import { View } from 'react-native';
+import ToDoList from './ToDoList';
+import ToDoForm from './ToDoForm';
+import { StyleSheet } from 'react-native';
 export default function App() {
   const [todos, setTodos] = useState([
     { id: '1', text: 'Learn React Native' },
@@ -23,27 +25,12 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Simple Todo App</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Add a new todo..."
-        value={newTodo}
-        onChangeText={(text) => setNewTodo(text)}
-      />
-      <Button title="Add" onPress={addTodo} />
-      <FlatList
-        data={todos}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.todo}>
-            <Text>{item.text}</Text>
-            <Button title="Remove" onPress={() => removeTodo(item.id)} />
-          </View>
-        )}
-      />
+      <ToDoForm newTodo={newTodo} setNewTodo={setNewTodo} add={addTodo} />
+      <ToDoList todoList={todos} remove={removeTodo} />
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -65,16 +52,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 4,
-  },
-  todo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 8,
-    marginTop: 8,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 4,
-    width: '80%',
   },
 });
