@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ToDoForm newTodo={newTodo} setNewTodo={setNewTodo} add={addTodo} />
+      <ToDoForm newTodo={newTodo} setTaskText={setNewTodo} addTask={addTodo} />
       <ToDoList todoList={todos} remove={removeTodo} />
     </View>
   );

@@ -31,6 +31,14 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   todo: {
-    
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 20,
+    width: '100%',
+    marginTop: 8,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 4,
   },
 });
