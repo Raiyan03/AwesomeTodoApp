@@ -5,13 +5,12 @@ export default function ToDoForm({ newTodo, setTaskText, addTask }) {
     return (
         <View style={styles.container}>
             <TextInput
-            
                 style={styles.input}
                 placeholder="Add a new task..."
                 value={newTodo}
                 onChangeText={setTaskText}
             />
-            <Button styles={styles.button} title="Add task" onPress={addTask} />
+            <Button title="Add task" onPress={addTask} />
         </View>
     );
 }
@@ -19,21 +18,15 @@ export default function ToDoForm({ newTodo, setTaskText, addTask }) {
 const styles = StyleSheet.create({
     container: {
         marginTop: 30,
-        display: 'flex',
-
         justifyContent: 'space-between',
         padding: 16,
     },
     input: {
-        width: '80%', // Assuming you want a similar style
+        width: '80%', 
         padding: 8,
         marginBottom: 8,
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 4,
-    },
-
-    button: {
-        height: 1,
     },
 });
