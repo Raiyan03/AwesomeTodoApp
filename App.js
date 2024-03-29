@@ -5,22 +5,22 @@ import ToDoForm from './ToDoForm';
 import { StyleSheet } from 'react-native';
 export default function App() {
   const [todos, setTodos] = useState([
-    { id: '1', text: 'Learn React Native' },
-    { id: '2', text: 'Build a Todo App' },
-    { id: '3', text: 'Deploy React Native App' },
+    'Do laundry',
+    'Go to gym',
+    'Walk dog',
   ]);
 
   const [newTodo, setNewTodo] = useState('');
 
   const addTodo = () => {
     if (newTodo.trim() !== '') {
-      setTodos([...todos, { id: Date.now().toString(), text: newTodo }]);
+      setTodos([...todos,  newTodo ]);
       setNewTodo('');
     }
   };
 
   const removeTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo, index) => index !== id));
   };
 
   return (

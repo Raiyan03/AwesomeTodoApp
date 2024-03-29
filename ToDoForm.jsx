@@ -5,6 +5,7 @@ export default function ToDoForm({ newTodo, setNewTodo, add }) {
     return (
         <View style={styles.container}>
             <TextInput
+            
                 style={styles.input}
                 placeholder="Add a new todo..."
                 value={newTodo}
